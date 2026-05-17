@@ -2,6 +2,8 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8"/>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#f59e0b">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
 <title>e-Nota Wisata</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
@@ -562,6 +564,11 @@ body {
 </div>
 
 <script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./sw.js")
+    .then(() => console.log("Service Worker Registered"));
+}
+  
 // ==================== SETTINGS ====================
 const DEFAULT_SETTINGS = {
   companyName: 'AJS.Tour Support By 571.Tour',
